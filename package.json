@@ -19,7 +19,9 @@
   "homepage": "https://github.com/fangj/powerui#readme",
   "dependencies": {
     "classnames": "^2.2.5",
+    "frisbee": "^1.1.4",
     "gitbook-plugin-fancybox": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.16.6",
     "react": "^15.3.2",
     "react-bootstrap": "^0.30.6",
