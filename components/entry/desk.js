@@ -1,6 +1,8 @@
 import React from 'react';
 import {Jumbotron,Button} from 'react-bootstrap';
 var tools=require ('./tools')(window.host);
+var moment =require('moment');
+moment.locale('zh-cn');
 
 export default class Desk extends React.Component {
   static propTypes = {
@@ -29,7 +31,11 @@ export default class Desk extends React.Component {
   		style.backgroundColor="Salmon";
   	}
     return (
-      <Jumbotron style={style}><h1>{desk.position}</h1><Button bsSize="large" block bsStyle={bsStyle} onClick={this.toggle}>&nbsp;</Button></Jumbotron>
+      <Jumbotron style={style}>
+      <h1>{desk.position}</h1>
+      <Button bsSize="large" block bsStyle={bsStyle} onClick={this.toggle}>&nbsp;</Button>
+      <h4>{lastVisit?moment(lastVisit).fromNow():"失去联系"}</h4>
+      </Jumbotron>
     );
   }
 
