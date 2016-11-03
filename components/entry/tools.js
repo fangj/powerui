@@ -12,7 +12,7 @@ const wait =(ms)=> new Promise((resolve, reject) => {
 
 //取状态接口
 function getStatus(mac){
-	return api.get("/"+mac).then(res=>res.body)
+	return api.get(mac).then(res=>res.body)
 	.catch(e=>{
 		console.log(e)
 	})
@@ -20,19 +20,19 @@ function getStatus(mac){
 
 //取所有状态接口
 function getAll(){
-	return api.get("/all").then(res=>res.body)
+	return api.get("all").then(res=>res.body)
 }
 
 //取所有状态接口
 function getOnline(){
-	return api.get("/online").then(res=>res.body)
+	return api.get("online").then(res=>res.body)
 }
 
 
 
 //设置状态接口
 const setCommand=(command)=>{
-	return api.post('/set', {body:command}).then(res=>{
+	return api.post('set', {body:command}).then(res=>{
 		console.log('设置成功',res.body)
 	}).catch(e=>{
 		console.log(e)

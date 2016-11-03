@@ -29,6 +29,7 @@
     "react-dom": "^15.3.2"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.28.1"
+    "@kadira/storybook": "^2.28.1",
+    "babel-preset-stage-0": "^6.16.0"
   }
 }
