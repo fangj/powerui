@@ -21,7 +21,11 @@ function getStatus(mac){
 //取所有状态接口
 function getAll(){
 	return api.get("/all").then(res=>res.body)
+}
 
+//取所有状态接口
+function getOnline(){
+	return api.get("/online").then(res=>res.body)
 }
 
 
@@ -59,6 +63,7 @@ module.exports=function(host){
 		getStatus,
 		getAll,
 		setCommand,
-		setCommands
+		setCommands,
+		getOnline
 	}
 }

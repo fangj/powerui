@@ -14,7 +14,7 @@ export default class Entry extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state={powers:{}}
+    this.state={powers:{},online:{}}
   }
 
   getAll(){
@@ -23,6 +23,9 @@ export default class Entry extends React.Component {
   		var powers={};
   		_powers.map(power=>powers[power.mac]=power);
   		this.setState({powers});
+  	});
+  	tools.getOnline().then(online=>{
+  		this.setState({online})
   	})
   }
 
@@ -35,11 +38,11 @@ export default class Entry extends React.Component {
   }
 
   render() {
-  	const {powers}=this.state;
+  	const {powers,online}=this.state;
     return (
     	<div>
     	  <Tabs defaultActiveKey={0} id="uncontrolled-tab-example">
-    	  	{_.keys(dataGroup).map((room,idx)=><Tab key={room} eventKey={idx} title={room}><Room desks={dataGroup[room]} powers={powers}/></Tab>)}
+    	  	{_.keys(dataGroup).map((room,idx)=><Tab key={room} eventKey={idx} title={room}><Room desks={dataGroup[room]} powers={powers} online={online}/></Tab>)}
   		  </Tabs>
       </div>
     );

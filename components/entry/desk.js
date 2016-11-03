@@ -6,6 +6,7 @@ export default class Desk extends React.Component {
   static propTypes = {
     desk: React.PropTypes.object.isRequired,
     power:React.PropTypes.object,
+    lastVisit:React.PropTypes.number
   };
 
   constructor(props) {
@@ -14,13 +15,21 @@ export default class Desk extends React.Component {
   }
 
   render() {
-  	const {desk,power}=this.props;
+  	const {desk,power,lastVisit}=this.props;
   	var bsStyle="default";
   	if(power){
   		bsStyle=(power.status==="ON")?"success":"danger";
   	}
+  	var online=false;
+  	if(lastVisit&&(Date.now()-lastVisit)<10000){
+		online=true;
+  	}
+  	var style={textAlign:"center"};
+  	if(!online){
+  		style.backgroundColor="Salmon";
+  	}
     return (
-      <Jumbotron style={{textAlign:"center"}}><h1>{desk.position}</h1><Button bsSize="large" block bsStyle={bsStyle} onClick={this.toggle}>&nbsp;</Button></Jumbotron>
+      <Jumbotron style={style}><h1>{desk.position}</h1><Button bsSize="large" block bsStyle={bsStyle} onClick={this.toggle}>&nbsp;</Button></Jumbotron>
     );
   }
 
