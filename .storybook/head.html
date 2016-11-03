@@ -1,0 +1,11 @@
+<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/pubsub-js/1.5.4/pubsub.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<link href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+<script>
+	PubSub.subscribe( 'msg.error', (msg,str)=>{toastr.error(str)} ); //toast,全局消息。正式代码中也有
+</script>
+<script>
+	PubSub.subscribe( 'route', (msg,route)=>{toastr.info("goto:"+route)} ); //方便调试路由跳转，正式代码中不出现
+</script>
