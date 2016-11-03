@@ -23,7 +23,7 @@ export default class Desk extends React.Component {
   		bsStyle=(power.status==="ON")?"success":"danger";
   	}
   	var online=false;
-  	if(lastVisit&&(Date.now()-lastVisit)<10000){
+  	if(lastVisit&&(Date.now()-lastVisit)<30000){//30秒没有联系为离线
 		online=true;
   	}
   	var style={textAlign:"center"};
