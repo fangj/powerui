@@ -13,3 +13,9 @@ storiesOf('Button', module)
     <button onClick={()=>PubSub.publish('msg.error','something wrong')}>😀 😎 👍 💯</button>
   ));
 
+
+import Entry from '../components/entry';
+storiesOf('Entry', module)
+  .add('Entry', () => (
+    <Entry />
+  ));
