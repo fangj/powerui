@@ -15,6 +15,7 @@ export default class Entry extends React.Component {
   constructor(props) {
     super(props);
     this.state={powers:{},online:{}}
+    this.getAll=this.getAll.bind(this);
   }
 
   getAll(){
@@ -35,6 +36,7 @@ export default class Entry extends React.Component {
   	this.token=PubSub.subscribe("refresh",function(){
   		me.getAll();
   	})
+    setInterval(me.getAll,60000);//每分钟刷新一次
   }
 
   render() {

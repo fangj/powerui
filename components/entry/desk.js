@@ -35,6 +35,7 @@ export default class Desk extends React.Component {
       <h1>{desk.position}</h1>
       <Button bsSize="large" block bsStyle={bsStyle} onClick={this.toggle}>&nbsp;</Button>
       <h4>{lastVisit?moment(lastVisit).fromNow():"失去联系"}</h4>
+      <span>{desk._id}</span>
       </Jumbotron>
     );
   }
