@@ -1,6 +1,7 @@
 import React from 'react';
 var _=require('lodash');
-const data=require('../../data/powerdb.js');
+// const data=require('../../data/powerdb.js');
+const data=window.powerdb;
 const dataSorted=_.sortBy(data,['lab','position'])
 const dataGroup=_.groupBy(dataSorted, "lab");
 import {Tabs,Tab} from 'react-bootstrap';
